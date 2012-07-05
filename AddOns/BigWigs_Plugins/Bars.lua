@@ -1244,7 +1244,7 @@ end
 
 function plugin:OnSync(sync, rest, nick)
 	if sync ~= "BWCustomBar" or not rest or not nick then return end
-	if not UnitIsRaidOfficer(nick) then return end
+	if UnitIsGroupAssistant(nick) then return end -- not removed because it now changed from true to false.
 	startCustomBar(rest, nick, false)
 end
 

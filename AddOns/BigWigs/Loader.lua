@@ -354,8 +354,9 @@ function loader:OnEnable()
 	end
 
 	self:RegisterEvent("ZONE_CHANGED_NEW_AREA", "ZoneChanged")
-	self:RegisterEvent("RAID_ROSTER_UPDATE", "CheckRoster")
-	self:RegisterEvent("PARTY_MEMBERS_CHANGED", "CheckRoster")
+	self:RegisterEvent("GROUP_ROSTER_UPDATE", "CheckRoster")
+	-- disabled because it is same like GROUP_ROSTER_UPDATE
+	--self:RegisterEvent("PARTY_MEMBERS_CHANGED", "CheckRoster")
 
 	self:RegisterEvent("CHAT_MSG_ADDON")
 	self:RegisterMessage("BigWigs_AddonMessage")

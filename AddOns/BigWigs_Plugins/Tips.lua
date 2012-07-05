@@ -440,7 +440,7 @@ end
 local function check()
 	if not InCombatLockdown() and GetNumGroupMembers() > 9 and select(2, IsInInstance()) == "raid" then
 		plugin:UnregisterEvent("PLAYER_REGEN_ENABLED")
-		plugin:UnregisterEvent("RAID_ROSTER_UPDATE")
+		plugin:UnregisterEvent("GROUP_ROSTER_UPDATE")
 		plugin:UnregisterEvent("PLAYER_ENTERING_WORLD")
 		if plugin.db.profile.show and plugin.db.profile.automatic then
 			plugin:RandomTip()
@@ -451,7 +451,7 @@ end
 function plugin:OnPluginEnable()
 	if not neverShowTip then
 		self:RegisterEvent("PLAYER_REGEN_ENABLED", check)
-		self:RegisterEvent("RAID_ROSTER_UPDATE", check)
+		self:RegisterEvent("GROUP_ROSTER_UPDATE", check)
 		self:RegisterEvent("PLAYER_ENTERING_WORLD", check)
 	end
 	self:RegisterMessage("BigWigs_AddonMessage")
@@ -462,7 +462,7 @@ end
 --
 
 function plugin:BigWigs_AddonMessage(event, prefix, message, sender)
-	if prefix ~= "TIP" or not UnitIsRaidOfficer(sender) or not self.db.profile.manual then return end
+	if prefix ~= "TIP" or UnitIsGroupAssistant(sender) or not self.db.profile.manual then return end -- not removed before UnitIsGroupAssistant, because API Change / Bug
 	self:ShowTip(message)
 end
 
@@ -511,7 +511,7 @@ local pName = UnitName("player")
 local _, pClass = UnitClass("player")
 SlashCmdList.BigWigs_SendRaidTip = function(input)
 	input = input:trim()
-	if not UnitInRaid("player") or not IsRaidOfficer() or (not tonumber(input) and #input < 10) then
+	if not UnitInRaid("player") or UnitIsGroupAssistant() or (not tonumber(input) and #input < 10) then -- not removed before UnitIsGroupAssistant because API Bug / Change
 		print(L["Usage: /sendtip <index|\"Custom tip\">"])
 		print(L["You must be an officer in the raid to broadcast a tip."])
 		return

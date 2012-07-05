@@ -35,6 +35,7 @@ L = mod:GetLocale()
 -----------------------------------------------------------------------------------------
 -- Locals
 local playerTbl = mod:NewTargetList()
+local canEnable = true
 
 --------------------------------------------------------------------------------
 -- Initialization
@@ -52,16 +53,20 @@ function mod:GetOptions()
 	}
 end
 
+function mod:VerifyEnable()
+	return canEnable
+end
+
 function mod:OnBossEnable()
 	-- Protector Kaolan 
-	self:Log("SPELL_AURA_APPLIED", "TouchApplied", 117519, 117510)
-	self:Log("SPELL_CAST_SUCCESS", "TouchCast",	 117519, 117510)	
-	self:Log("SPELL_CAST_SUCCESS", "DefiledGroundCast", 117989, 117988, 118091, 117986)
-	self:Log("SPELL_AURA_APPLIED", "DefiledGround", 117989, 117988, 118091, 117986)
-	self:Log("SPELL_CAST_SUCCESS", "ExpelCorruption", 117975)
+	self:Log("SPELL_AURA_APPLIED", "TouchApplied", 117519, 117510)				-- Touch of Sha warning for the Healers
+	self:Log("SPELL_CAST_SUCCESS", "TouchCast",	 117519, 117510)				
+	self:Log("SPELL_CAST_SUCCESS", "DefiledGroundCast", 117989, 117988, 118091, 117986)	
+	self:Log("SPELL_AURA_APPLIED", "DefiledGround", 117989, 117988, 118091, 117986)		-- Defiled Ground under you!
+	self:Log("SPELL_CAST_SUCCESS", "ExpelCorruption", 117975)						-- explosion from Boss
 	
 	-- Elder Regail 
-	self:Log("SPELL_CAST_START", "LightningPrisonStart", 122874, 117398, 117436)
+	self:Log("SPELL_CAST_START", "LightningPrisonStart", 122874, 117398, 117436) -- Lightning Prison 2,5 Sec Cast
 	self:Log("SPELL_AURA_APPLIED", "LightningPrisonApplied", 122874, 117398, 117436)
 	self:Log("SPELL_AURA_REMOVED", "LightningPrisonRemoved", 122874, 117398, 117436)
 	-- Storm
@@ -79,13 +84,17 @@ function mod:OnBossEnable()
 	self:Log("SPELL_CAST_SUCCESS", "CorruptedWater_spawned",	117227) -- the Bad One
 	
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "CheckBossStatus")
-	self:Death("Win", 60966, 60965, 60620, 60583, 60585, 60619, 60963, 60964, 60962, 60961, 60618, 60586)
+	self:Death("Deaths", 60966, 60965, 60620, 60583, 60585, 60619, 60963, 60964, 60962, 60961, 60618, 60586)
 end
 
-function mod:OnEngage(diff)
+function mod:OnEngage()
 	bossDead = 0
 	self:Berserk(360) -- assume
 
+end
+
+function mod:OnWin()
+	canEnable = false
 end
 
 --------------------------------------------------------------------------------

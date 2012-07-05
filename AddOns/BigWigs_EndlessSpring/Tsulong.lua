@@ -54,6 +54,14 @@ end
 L = mod:GetLocale()
 L.breath = L.breath.." "..INLINE_TANK_ICON
 L.HealerBreath = L.HealerBreath.." "..INLINE_HEALER_ICON
+
+-------------------------------------------------------------------------------
+-- Locals 
+--
+local canEnable = true
+
+
+
 --------------------------------------------------------------------------------
 -- Initialization
 --
@@ -76,6 +84,12 @@ function mod:GetOptions()
 		berserk = "general",
 	}
 end
+
+function mod:VerifyEnable()
+	return canEnable
+end
+
+
 
 function mod:OnBossEnable()
 	-- Night Phase
@@ -100,7 +114,7 @@ function mod:OnBossEnable()
 	
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "CheckBossStatus")
 	self:RegisterUnitEvent("UNIT_POWER", "boss1", "boss2", "boss3", "boss4")
-	self:Death("Win", 10000)
+	self:Death("Deaths", 10000)
 end
 
 function mod:OnEngage(diff)
@@ -109,6 +123,10 @@ function mod:OnEngage(diff)
 
 end
 
+
+function mod:OnWin()
+	canEnable = false
+end
 --------------------------------------------------------------------------------
 -- Event Handlers
 ------ 

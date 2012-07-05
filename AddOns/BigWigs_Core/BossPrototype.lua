@@ -306,7 +306,7 @@ end
 
 function boss:Tank()
 	if core.db.profile.ignorerole then return true end
-	local tree = GetPrimaryTalentTree()
+	local tree = GetSpecialization()
 	local role = GetTalentTreeRoles(tree)
 	local _, class = UnitClass("player")
 	if class == "DRUID" and tree == 2 then
@@ -322,14 +322,14 @@ end
 
 function boss:Healer()
 	if core.db.profile.ignorerole then return true end
-	local tree = GetPrimaryTalentTree()
+	local tree = GetSpecialization()
 	local role = GetTalentTreeRoles(tree)
 	if role == "HEALER" then return true end
 end
 
 --[[
 function boss:Damager()
-	local tree = GetPrimaryTalentTree()
+	local tree = GetSpecialization()
 	local role
 	local _, class = UnitClass("player")
 	if class == "MAGE" or class == "WARLOCK" or class == "HUNTER" or (class == "DRUID" and t == 1) or (class == "PRIEST" and t == 3) then
@@ -575,7 +575,7 @@ do
 		local msg = noName and spellName or fmt(L["you"], spellName)
 		sentWhispers[msg] = true
 		if UnitIsUnit(player, "player") or not UnitIsPlayer(player) or not core.db.profile.whisper then return end
-		if UnitInRaid("player") and not IsRaidLeader() and not IsRaidOfficer() then return end
+		if UnitInRaid("player") and not IsGroupLeader() and not IsGroupAssistant() then return end
 		SendChatMessage("<BW> " .. msg, "WHISPER", nil, player)
 	end
 end

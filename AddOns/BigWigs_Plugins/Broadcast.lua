@@ -28,10 +28,10 @@ function plugin:BigWigs_Message(event, module, key, msg, color, nobroadcast)
 	if not msg or nobroadcast or not BigWigs.db.profile.broadcast then return end
 
 	-- only allowed to broadcast if we're in a party or raidleader/assistant
-	local inRaid = GetRealNumRaidMembers() > 0
-	if not inRaid and GetRealNumPartyMembers() == 0 then
+	local inRaid = GetNumGroupMembers() > 0
+	if not inRaid and GetNumSubgroupMembers() == 0 then
 		return
-	elseif inRaid and not IsRaidLeader() and not IsRaidOfficer() then
+	elseif inRaid and not IsGroupLeader() and not IsGroupAssistant() then
 		return
 	end
 
