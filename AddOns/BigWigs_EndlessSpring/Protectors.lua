@@ -5,7 +5,7 @@
 
 local mod, CL = BigWigs:NewBoss("Protectors of the Endless", 886, 683)
 if not mod then return end
-mod:RegisterEnableMob(60966, 60965, 60620, 60583, 60585, 60619, 60963, 60964, 60962, 60961, 60618, 60586)
+mod:RegisterEnableMob(60583, 60585, 60586)
 
 
 --------------------------------------------------------------------------------
@@ -236,7 +236,7 @@ end
 	
 	
 function mod:Deaths(mobId)	
-	if mobID == 60966 or mobID == 60965 or mobID == 60620 or mobID == 60583 or mobID == 60585 or mobID == 60619 or mobID == 60963 or mobID == 60964 or mobID == 60962 or mobID == 60961 or mobID == 60618 or mobID == 60586 then
+	if mobId == 60583 or mobId == 60585 or mobId == 60586 then
 		bossDead = bossDead +1
 		if bossDead > 2 then 
 			self:Win() 

@@ -5,7 +5,7 @@
 
 local mod, CL = BigWigs:NewBoss("Tsulong", 886, 742)
 if not mod then return end
-mod:RegisterEnableMob(10000) -- unknown Boss ID 
+mod:RegisterEnableMob(63025) -- unknown Boss ID 
 
 
 --------------------------------------------------------------------------------
@@ -111,9 +111,9 @@ function mod:OnBossEnable()
 	self:Log("SPELL_CAST_START", "UnstableCast", 122881, 122907, 122938) -- Unstable Bolt Cast
 	self:Log("SPELL_CAST_SUCCESS", "UnstableHitted", 122881, 122907, 122938) -- Unstable Bold casted and moving to player
 	self:Log("SPELL_CAST_START", "SunBreathCast", 123185, 123105 , 122855) -- Warn to run into Breath for Healers
-	
+	self:RegisterUnitEvent("UNIT_POWER")
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "CheckBossStatus")
-	self:RegisterUnitEvent("UNIT_POWER", "boss1", "boss2", "boss3", "boss4")
+	-- self:RegisterUnitEvent("UNIT_POWER", "boss1", "boss2", "boss3", "boss4")
 	self:Death("Deaths", 10000)
 end
 
@@ -292,7 +292,7 @@ end
 
 
 function mod:Deaths(mobId)
-	if mobID == 10000 then
+	if mobID == 63025 then
 		self:Win()
 	end
 end
