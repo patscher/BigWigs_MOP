@@ -5,7 +5,7 @@
 
 local mod, CL = BigWigs:NewBoss("Tsulong", 886, 742)
 if not mod then return end
-mod:RegisterEnableMob(10000) -- unknown actualy
+mod:RegisterEnableMob(10000) -- unknown Boss ID 
 
 
 --------------------------------------------------------------------------------
