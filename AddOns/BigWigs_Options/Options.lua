@@ -15,8 +15,6 @@ do
 	})
 end
 
---XXX MoP temp
-local GetNumSubgroupMembers = GetNumSubgroupMembers or GetNumPartyMembers
 
 local C = BigWigs.C
 
