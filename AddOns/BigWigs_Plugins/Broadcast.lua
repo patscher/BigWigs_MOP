@@ -9,6 +9,11 @@ if not plugin then return end
 -- Locals
 --
 
+--XXX MoP temp
+local IsGroupLeader = IsGroupLeader or IsRaidLeader
+local IsGroupAssistant = IsGroupAssistant or IsRaidOfficer
+
+
 local output = "*** %s ***"
 local L = LibStub("AceLocale-3.0"):GetLocale("Big Wigs: Plugins")
 
