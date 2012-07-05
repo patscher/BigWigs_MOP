@@ -1,0 +1,102 @@
+------------------------------------------------------------------------
+r9071 | funkydude | 2012-07-03 15:27:35 +0000 (Tue, 03 Jul 2012) | 1 line
+Changed paths:
+   M /trunk/Bastion/Chogall.lua
+   M /trunk/Bastion/DoubleDragon.lua
+   M /trunk/Bastion/Halfus.lua
+   M /trunk/Bastion/Sinestra.lua
+   M /trunk/Bastion/TwilightAscendants.lua
+
+Bastion: fix spell id options for MoP
+------------------------------------------------------------------------
+r9070 | funkydude | 2012-07-03 14:44:48 +0000 (Tue, 03 Jul 2012) | 1 line
+Changed paths:
+   M /trunk/Blackwing/Atramedes.lua
+   M /trunk/Blackwing/Chimaeron.lua
+   M /trunk/Blackwing/Magmaw.lua
+   M /trunk/Blackwing/Maloriak.lua
+   M /trunk/Blackwing/Nefarian.lua
+   M /trunk/Blackwing/Omnotron.lua
+
+Blackwing: fix spell id options for MoP
+------------------------------------------------------------------------
+r9069 | funkydude | 2012-07-03 13:57:12 +0000 (Tue, 03 Jul 2012) | 1 line
+Changed paths:
+   M /trunk/DragonSoul/Blackhorn.lua
+   M /trunk/DragonSoul/DeathwingMadness.lua
+   M /trunk/DragonSoul/DeathwingSpine.lua
+   M /trunk/DragonSoul/Hagara.lua
+   M /trunk/DragonSoul/Morchok.lua
+   M /trunk/DragonSoul/Yorsahj.lua
+
+DragonSoul: Fix option spell ids for MoP
+------------------------------------------------------------------------
+r9068 | funkydude | 2012-07-03 13:38:55 +0000 (Tue, 03 Jul 2012) | 1 line
+Changed paths:
+   M /trunk/Core/Constants.lua
+
+Core/Constants: add a print when we use an invalid custom icon for a boss option
+------------------------------------------------------------------------
+r9067 | funkydude | 2012-07-02 13:10:36 +0000 (Mon, 02 Jul 2012) | 1 line
+Changed paths:
+   M /trunk/Loader.lua
+
+Loader: MoP fix
+------------------------------------------------------------------------
+r9066 | Maat | 2012-06-27 19:53:56 +0000 (Wed, 27 Jun 2012) | 1 line
+Changed paths:
+   A /trunk/HeartOfFear
+   A /trunk/HeartOfFear/Garalon.lua
+   A /trunk/HeartOfFear/Locales
+   A /trunk/HeartOfFear/Locales/deDE.lua
+   A /trunk/HeartOfFear/Locales/esES.lua
+   A /trunk/HeartOfFear/Locales/frFR.lua
+   A /trunk/HeartOfFear/Locales/koKR.lua
+   A /trunk/HeartOfFear/Locales/ptBR.lua
+   A /trunk/HeartOfFear/Locales/ruRU.lua
+   A /trunk/HeartOfFear/Locales/zhCN.lua
+   A /trunk/HeartOfFear/Locales/zhTW.lua
+   A /trunk/HeartOfFear/Meljarak.lua
+   A /trunk/HeartOfFear/Shekzeer.lua
+   A /trunk/HeartOfFear/Tayak.lua
+   A /trunk/HeartOfFear/Unsok.lua
+   A /trunk/HeartOfFear/Zorlok.lua
+   A /trunk/HeartOfFear/locales.xml
+   A /trunk/HeartOfFear/modules.xml
+   M /trunk/modules.xml
+
+import Heart of Fear skeleton modules
+------------------------------------------------------------------------
+r9065 | Maat | 2012-06-26 13:32:57 +0000 (Tue, 26 Jun 2012) | 1 line
+Changed paths:
+   A /trunk/Mogushan
+   A /trunk/Mogushan/Elegon.lua
+   A /trunk/Mogushan/Feng.lua
+   A /trunk/Mogushan/Garajal.lua
+   A /trunk/Mogushan/Locales
+   A /trunk/Mogushan/Locales/deDE.lua
+   A /trunk/Mogushan/Locales/esES.lua
+   A /trunk/Mogushan/Locales/frFR.lua
+   A /trunk/Mogushan/Locales/koKR.lua
+   A /trunk/Mogushan/Locales/ptBR.lua
+   A /trunk/Mogushan/Locales/ruRU.lua
+   A /trunk/Mogushan/Locales/zhCN.lua
+   A /trunk/Mogushan/Locales/zhTW.lua
+   A /trunk/Mogushan/TheSpiritKings.lua
+   A /trunk/Mogushan/TheStoneGuard.lua
+   A /trunk/Mogushan/WillOfTheEmperor.lua
+   A /trunk/Mogushan/locales.xml
+   A /trunk/Mogushan/modules.xml
+
+import Mogu'shan Vault skeleton module
+------------------------------------------------------------------------
+r9064 | funkydude | 2012-04-13 15:20:13 +0000 (Fri, 13 Apr 2012) | 1 line
+Changed paths:
+   M /trunk/Baradin/Locales/ptBR.lua
+   M /trunk/Blackwing/Locales/ptBR.lua
+   M /trunk/Firelands/Locales/ptBR.lua
+   M /trunk/Locales/ptBR.lua
+   M /trunk/Throne/Locales/ptBR.lua
+
+ptBR update
+------------------------------------------------------------------------
