@@ -511,7 +511,7 @@ local pName = UnitName("player")
 local _, pClass = UnitClass("player")
 SlashCmdList.BigWigs_SendRaidTip = function(input)
 	input = input:trim()
-	if not UnitInRaid("player") or UnitIsGroupAssistant() or (not tonumber(input) and #input < 10) then -- not removed before UnitIsGroupAssistant because API Bug / Change
+	if not UnitInRaid("player") or UnitIsGroupAssistant("player") or (not tonumber(input) and #input < 10) then -- not removed before UnitIsGroupAssistant because API Bug / Change
 		print(L["Usage: /sendtip <index|\"Custom tip\">"])
 		print(L["You must be an officer in the raid to broadcast a tip."])
 		return

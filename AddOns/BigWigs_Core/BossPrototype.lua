@@ -575,7 +575,7 @@ do
 		local msg = noName and spellName or fmt(L["you"], spellName)
 		sentWhispers[msg] = true
 		if UnitIsUnit(player, "player") or not UnitIsPlayer(player) or not core.db.profile.whisper then return end
-		if UnitInRaid("player") and not IsGroupLeader() and not IsGroupAssistant() then return end
+		if UnitInRaid("player") and not IsGroupLeader("player") and not IsGroupAssistant("player") then return end
 		SendChatMessage("<BW> " .. msg, "WHISPER", nil, player)
 	end
 end
