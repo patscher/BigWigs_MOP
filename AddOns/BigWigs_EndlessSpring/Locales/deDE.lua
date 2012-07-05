@@ -36,7 +36,7 @@ if L then
 	
 	
 -- Day Phase
-	L.embodied_spawned = "Embodied Terror erschienen"
+	L.embodied_spawned = "Verkoerperter Terror erschienen"
 	L.Terrorize = "Terrorisieren auf %1$s"
 	L.fright = ">>>Wirke angst<<<"
 	L.unstable_spawned = "Instabiler Sha erschienen! >> ZIEL WECHSELN <<"
