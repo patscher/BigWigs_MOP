@@ -237,7 +237,7 @@ end
 	
 function mod:Deaths(mobId)	
 	if mobID == 60966 or mobID == 60965 or mobID == 60620 or mobID == 60583 or mobID == 60585 or mobID == 60619 or mobID == 60963 or mobID == 60964 or mobID == 60962 or mobID == 60961 or mobID == 60618 or mobID == 60586 then
-		bossDead=bossDead=+1 
+		bossDead = bossDead +1
 		if bossDead > 2 then 
 			self:Win() 
 		end
