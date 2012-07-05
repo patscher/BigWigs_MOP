@@ -15,6 +15,12 @@ if not plugin then return end
 -- Locals
 --
 
+--XXX MoP temp
+local UnitIsGroupLeader = UnitIsGroupLeader or UnitIsRaidOfficer
+local UnitIsGroupAssistant = UnitIsGroupAssistant or UnitIsRaidOfficer
+local GetNumSubgroupMembers = GetNumSubgroupMembers or GetNumPartyMembers
+
+
 local colorize = nil
 do
 	local r, g, b
@@ -1245,7 +1251,7 @@ end
 function plugin:OnSync(sync, rest, nick)
 	if sync ~= "BWCustomBar" or not rest or not nick then return end
 	if UnitIsGroupAssistant(nick) then return end -- not removed because it now changed from true to false.
-	startCustomBar(rest, nick, false)
+		startCustomBar(rest, nick, false)
 end
 
 -------------------------------------------------------------------------------

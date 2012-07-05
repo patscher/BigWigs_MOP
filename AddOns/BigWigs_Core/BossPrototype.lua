@@ -8,8 +8,6 @@ local IsGroupAssistant = IsGroupAssistant or IsRaidOfficer
 local GetSpecialization = GetSpecialization or GetPrimaryTalentTree
 local GetSpecializationRole = GetSpecializationRole or GetTalentTreeRoles
 
-
-
 local debug = false -- Set to true to get (very spammy) debug messages.
 local dbgStr = "[DBG:%s] %s"
 local function dbg(self, msg) print(dbgStr:format(self.displayName, msg)) end
@@ -315,10 +313,10 @@ end
 function boss:Tank()
 	if core.db.profile.ignorerole then return true end
 		local tree = GetSpecialization()
-	local role = GetSpecializationRole(tree)
-	if GetPrimaryTalentTree then --XXX MoP temp
-		local _, class = UnitClass("player")
-		if class == "DRUID" and tree == 2 then
+		local role = GetSpecializationRole(tree)
+		if GetPrimaryTalentTree then --XXX MoP temp
+			local _, class = UnitClass("player")
+			if class == "DRUID" and tree == 2 then
 			local _,_,_,_,talent = GetTalentInfo(2, 18) -- Natural Reaction
 			if talent > 0 then
 				role = "TANK"
